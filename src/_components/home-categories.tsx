@@ -4,14 +4,14 @@ import DishItem from "./dish-item";
 
 interface HomeCategoriesProps {
     category: {
-        id: string,
-        name: string,
-        imageUrl: string,
+        id: string | null,
+        name: string | null,
+        image: string | null,
     },
 }
 
 const HomeCategories = ({ category }: HomeCategoriesProps) => {
-    const showDishes = dishes.filter(dish => dish.categories.includes(category.id)).slice(0, 3)
+    const showDishes = dishes.filter(dish => dish.categories.includes(category.id!)).slice(0, 3)
     return (
         <>
             <div className="flex justify-between mt-5 mb-2">
