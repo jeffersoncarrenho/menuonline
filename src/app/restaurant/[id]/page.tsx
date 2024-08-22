@@ -33,7 +33,7 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
             <Header restaurant={restaurant!} />
             <div className="flex w-full items-center gap-4 p-5 overflow-auto [&::-webkit-scrollbar]:hidden">
                 {categories.map(categ => (
-                    <CategoriesSlider category={categ} />
+                    <CategoriesSlider category={categ} key={categ.id} />
                 ))}
             </div>
             <div className="px-5">
