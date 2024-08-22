@@ -12,17 +12,17 @@ interface RestaurantPageProps {
 
 const RestaurantPage = async ({ params }: RestaurantPageProps) => {
 
-    const restaurant = await getRestaurantById(params.id)
+    // const restaurant = await getRestaurantById(params.id)
 
     return (
         <main>
-            <Header restaurant={restaurant!} />
+            {/* <Header restaurant={restaurant!} />
             <div className="flex w-full items-center gap-4 p-5 overflow-auto [&::-webkit-scrollbar]:hidden">
 
             </div>
             <div className="px-5">
 
-            </div>
+            </div> */}
 
         </main>
     );
