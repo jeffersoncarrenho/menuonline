@@ -5,88 +5,52 @@ const prisma = new PrismaClient()
 async function seedDatabase() {
     try {
 
-        const burgers = [
+        const hotdogs = [
             {
-                name: 'Jump Burger',
+                name: 'Jump Hot Dog',
                 price: '60',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                image: 'https://utfs.io/f/ac4fa33c-0e9d-4436-8786-e6dda4028b0c-jh3axz.jpg',
+                image: 'https://utfs.io/f/95a30511-f416-481b-aec3-d33abee6e071-t59zad.jpg',
             },
             {
-                name: 'Jump Mini Burgers',
+                name: 'American Hot Dog',
                 price: '65',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                image: 'https://utfs.io/f/3da5a8c3-ef1d-4bdb-9c91-9a2427dd4469-zgxzex.jpg',
+                image: 'https://utfs.io/f/665b2a6f-cdec-4558-a5d1-e2f6b386e69f-t59zae.jpg',
             },
             {
-                name: 'Jump Special Burger',
+                name: 'Jump Double Dog',
                 price: '70',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                image: 'https://utfs.io/f/7af6b9f7-3efc-41c6-b009-18841a87b51a-jh3axy.jpg',
+                image: 'https://utfs.io/f/8f98f8da-41ae-4598-a49f-a08be28b5f97-t59zaa.jpg',
             },
             {
-                name: 'Jump Combo Burger',
+                name: 'Jump Simple Hot Dog',
                 price: '80',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                image: 'https://utfs.io/f/4c7e3ca1-5d1f-4346-8443-9b461dcd4c4e-jh3ay0.jpg',
+                image: 'https://utfs.io/f/7ec661bb-935d-4fe3-8071-bc381ba4858c-t59zac.jpg',
             },
             {
-                name: 'Jump Cheese Salad Burger',
+                name: 'Jump Vegan Hot Dog',
                 price: '60',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                image: 'https://utfs.io/f/8eb69226-2978-42c5-ac94-00266137990e-jh3axv.jpg',
-            },
-            {
-                name: 'Jump Family Combo Burger',
-                price: '150',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                image: 'https://utfs.io/f/77c6f5fa-4898-4414-98b1-0ec474135185-jh3axr.jpg',
-            },
-            {
-                name: 'Jump Beer Combo Burger',
-                price: '95',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                image: 'https://utfs.io/f/6b208a04-ae44-49ea-a072-408abb196965-jh3axt.jpg',
-            },
-            {
-                name: 'Jump Tasty Burger',
-                price: '60',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                image: 'https://utfs.io/f/241ecfb0-8ac2-4085-a06a-4cabdf7e5d9e-jh3axu.jpg',
-            },
-            {
-                name: 'Jump Big Burger',
-                price: '70',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                image: 'https://utfs.io/f/66b0424f-ffca-47cf-954c-f46e1b15d6ba-jh3axw.jpg',
-            },
-            {
-                name: 'Jump Combo Mini Burgers',
-                price: '100',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                image: 'https://utfs.io/f/13a01d26-dec2-475b-b0bf-fef2e555e392-jh3axx.jpg',
-            },
-            {
-                name: 'Jump Combo Mini Burgers',
-                price: '70',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                image: 'https://utfs.io/f/13a01d26-dec2-475b-b0bf-fef2e555e392-jh3axx.jpg',
+                image: 'https://utfs.io/f/1f8dd4cc-ed39-4f15-ba77-a94bbd20ae78-t59zab.jpg',
             },
         ];
 
 
 
-        for (const burger of burgers) {
+        for (const hotdog of hotdogs) {
 
             const c = await prisma.dishes.create({
                 data: {
-                    name: burger.name,
-                    price: burger.price,
-                    description: burger.description,
-                    image: burger.image,
+                    name: hotdog.name,
+                    price: hotdog.price,
+                    description: hotdog.description,
+                    image: hotdog.image,
                     FoodCategories: {
                         connect: {
-                            id: 'cm04fa0hs0000a36cahf644zr'
+                            id: 'cm04fa5zu0003a36cveysham0'
                         }
                     }
                 }

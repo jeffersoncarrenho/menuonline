@@ -32,7 +32,7 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
         <main>
             <Header restaurant={restaurant!} />
             <div className="flex w-full items-center gap-4 p-5 overflow-auto [&::-webkit-scrollbar]:hidden">
-                {categories.map(categ => (
+                {categories.map(categ => categ.dishes.length > 0 && (
                     <CategoriesSlider category={categ} key={categ.id} />
                 ))}
             </div>
