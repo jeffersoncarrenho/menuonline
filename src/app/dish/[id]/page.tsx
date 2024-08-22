@@ -32,9 +32,9 @@ const DishPage = async ({ params }: DishPageProps) => {
     return (
         <div className="p-5">
             <div className="flex items-center justify-between">
-                {/* <Link href={`/category/${category?.id}`}> */}
-                <ArrowLeft />
-                {/* </Link> */}
+                <Link href={`/category/${category?.id}`}>
+                    <ArrowLeft />
+                </Link>
                 <h1 className="text-lg font-bold">Detalhes</h1>
                 <span></span>
             </div>
