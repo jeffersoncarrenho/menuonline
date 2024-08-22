@@ -5,6 +5,7 @@ import CategoriesSlider from "@/_components/categories-slider";
 import { getRestaurants } from "@/_lib/data";
 import { Card } from "@/_components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default async function Home() {
@@ -17,7 +18,10 @@ export default async function Home() {
         <h1>Jump Foods</h1>
         {restaurants.map(restaurant => (
           <Card key={restaurant?.id!}>
-            <Image src={restaurant?.image!} width={100} height={100} alt={restaurant?.name!} />
+            <Link href={`/restaurant/${restaurant.id}`}>
+              <Image src={restaurant?.image!} width={100} height={100} alt={restaurant?.name!} />
+            </Link>
+
           </Card>
         ))}
       </div>
