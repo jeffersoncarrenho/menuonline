@@ -18,7 +18,7 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
         },
         include: {
             categories: true,
-        }
+        },
     });
 
     return (

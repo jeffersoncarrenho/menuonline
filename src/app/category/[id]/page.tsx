@@ -32,9 +32,7 @@ const FoodCategoryPage = async ({ params }: FoodCategoryPageProps) => {
             </div>
 
             <div className="my-5">
-                {category?.dishes?.map(dish =>
-                    <DishItem dish={dish} key={dish.id} />
-                )}
+
             </div>
         </div>
     );
