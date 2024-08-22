@@ -4,11 +4,11 @@ import { Card } from "./ui/card";
 
 interface DishItemProps {
     dish: {
-        id: string | null,
-        name: string | null,
-        image: string | null,
-        price: string | null,
-        description: string | null,
+        id: string | null | undefined,
+        name: string | null | undefined,
+        image: string | null | undefined,
+        price: string | null | undefined,
+        description: string | null | undefined,
     },
 }
 

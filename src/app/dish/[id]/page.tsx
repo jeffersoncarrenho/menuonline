@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import DishItem from "@/_components/dish-item";
 import { db } from "@/_lib/prisma";
+import DishItem from "@/_components/dish-item";
 
 interface DishPageProps {
     params: {
@@ -19,11 +19,12 @@ const DishPage = async ({ params }: DishPageProps) => {
 
     const category = await db.foodCategories.findUnique({
         where: {
-            id: dish?.categoryId,
+            id: dish?.categoryId
         },
         include: {
             dishes: true
         }
+
     })
 
     const relatedDishes = category?.dishes.filter(related => related.id != params.id).slice(0, 3)
@@ -51,6 +52,7 @@ const DishPage = async ({ params }: DishPageProps) => {
                     <p className="text-sm font-light">{category?.name}</p>
                     <h2 className="text-xl font-bold mb-3">{dish?.name}</h2>
                 </div>
+                <p className="text-2xl font-bold">${dish?.price}</p>
             </div>
             <p className="font-light">
                 {dish?.description}
@@ -58,7 +60,9 @@ const DishPage = async ({ params }: DishPageProps) => {
             <div className="my-5">
                 <h3 className="text-md font-semibold mb-3">Você também pode gostar</h3>
                 <div className="my-2">
-
+                    {relatedDishes?.map(related =>
+                        <DishItem dish={related} key={related.id} />
+                    )}
                 </div>
             </div>
         </div>

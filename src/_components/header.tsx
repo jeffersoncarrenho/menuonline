@@ -3,8 +3,8 @@ import { Card, CardDescription, CardTitle } from "./ui/card";
 
 interface HeaderProps {
     restaurant: {
-        name: string | null,
-        image: string | null,
+        name?: string | null | undefined,
+        image?: string | null | undefined,
     }
 }
 
