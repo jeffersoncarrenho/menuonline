@@ -18,7 +18,7 @@ export default async function Home() {
       <div className="flex flex-col h-full w-full items-center justify-center">
         <h1>Jump Foods</h1>
         {restaurants.map(restaurant => (
-          <Card key={restaurant.id}>
+          <Card key={restaurant?.id!}>
             <Image src={restaurant?.image!} width={100} height={100} alt={restaurant?.name!} />
           </Card>
         ))}
