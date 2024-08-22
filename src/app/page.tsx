@@ -7,10 +7,8 @@ import { Card } from "@/_components/ui/card";
 import Image from "next/image";
 
 
-
 export default async function Home() {
   const restaurants = await getRestaurants()
-  console.log(restaurants)
 
   return (
     <main>
