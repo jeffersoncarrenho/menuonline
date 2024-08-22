@@ -66,6 +66,8 @@ CREATE TABLE "Dishes" (
     "categoryId" TEXT NOT NULL,
     "name" TEXT,
     "image" TEXT,
+    "description" TEXT,
+    "price" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 

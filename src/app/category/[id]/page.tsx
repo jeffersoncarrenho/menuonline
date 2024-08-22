@@ -1,14 +1,25 @@
-'use client'
-
 import DishItem from "@/_components/dish-item";
-import { categories, dishes } from "@/_constants/categories";
+import { db } from "@/_lib/prisma";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 
-const Page = () => {
-    const params = useParams<{ id: string }>()
-    const category = categories.filter((cat) => cat.id == params.id).map((cat) => cat.name)
+
+interface FoodCategoryPageProps {
+    params: {
+        id: string
+    }
+}
+
+
+const FoodCategoryPage = async ({ params }: FoodCategoryPageProps) => {
+    const category = await db.foodCategories.findUnique({
+        where: {
+            id: params.id
+        },
+        include: {
+            dishes: true
+        }
+    })
 
     return (
         <div className="p-5">
@@ -16,21 +27,17 @@ const Page = () => {
                 <Link href="/">
                     <ArrowLeft />
                 </Link>
-                <h1 className="text-lg font-bold">{category}</h1>
+                <h1 className="text-lg font-bold">{category?.name}</h1>
                 <span></span>
             </div>
 
             <div className="my-5">
-                {
-                    dishes.map((dish) => (
-                        dish.categories.includes(params.id) ?
-                            <DishItem dish={dish} key={dish.id} />
-                            : ''
-                    ))
-                }
+                {category?.dishes?.map(dish =>
+                    <DishItem dish={dish} key={dish.id} />
+                )}
             </div>
         </div>
     );
 }
 
-export default Page;
+export default FoodCategoryPage;

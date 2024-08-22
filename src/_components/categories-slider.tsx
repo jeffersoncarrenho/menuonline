@@ -12,7 +12,7 @@ interface CategoriesSliderProps {
 
 const CategoriesSlider = ({ category }: CategoriesSliderProps) => {
     return (
-        <Link href={`/restaurant/category/${category.id}`}>
+        <Link href={`/category/${category.id}`}>
             <Card className="relative max-h-[120px] min-h-[120px] min-w-[81px] rounded-xl">
                 <Image src={category.image!} fill alt={category.name!} className="object-cover rounded-xl" />
                 <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">{category.name!}</p>

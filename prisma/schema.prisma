@@ -79,12 +79,14 @@ model FoodCategories {
 }
 
 model Dishes {
-  id         String   @id @default(cuid())
-  categoryId String
-  name       String?
-  image      String?
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id          String   @id @default(cuid())
+  categoryId  String
+  name        String?
+  image       String?
+  description String?
+  price       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
   FoodCategories FoodCategories @relation(fields: [categoryId], references: [id])
 }
