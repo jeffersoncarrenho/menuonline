@@ -51,7 +51,6 @@ const DishPage = async ({ params }: DishPageProps) => {
                     <p className="text-sm font-light">{category?.name}</p>
                     <h2 className="text-xl font-bold mb-3">{dish?.name}</h2>
                 </div>
-                <p className="text-2xl font-bold">${dish?.price}</p>
             </div>
             <p className="font-light">
                 {dish?.description}
@@ -59,11 +58,7 @@ const DishPage = async ({ params }: DishPageProps) => {
             <div className="my-5">
                 <h3 className="text-md font-semibold mb-3">Você também pode gostar</h3>
                 <div className="my-2">
-                    {
-                        relatedDishes?.map(related => (
-                            <DishItem dish={related} key={related.id} />
-                        ))
-                    }
+
                 </div>
             </div>
         </div>
